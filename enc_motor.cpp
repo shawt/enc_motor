@@ -19,7 +19,7 @@ enc_motor::enc_motor(int ratio, int encApin, int encBpin)
     _bPwm = 6;
     _bIn1 = 7;
     _bIn2 = 8;
-    _kp =1;
+    _kp =5;
     _partialTurn = (_ratio * 8) / 16; //8 pole magnet will generate 8 pin-change interrupt calls per encoder rotation. This means that th$
     
     pinMode (encApin, INPUT_PULLUP);
@@ -78,7 +78,7 @@ void enc_motor::pciSetup(byte pin)
 void enc_motor::enc_fwd(double reqTurns, int speed)
 
 {
-    analogWrite(_bPwm, speed-10);
+    analogWrite(_bPwm, speed);
     digitalWrite(_bIn1, HIGH);
     digitalWrite(_bIn2, LOW);
     analogWrite(_aPwm, speed);
@@ -98,7 +98,7 @@ void enc_motor::enc_fwd(double reqTurns, int speed)
     while (_turnsA < reqTurns && _turnsB < reqTurns) //this function is for both motors
     {
         delay(100);
-        error = (_ticksA - _ticksB) / _kp;
+        error = (_errTicksA - _errTicksB) / _kp;
         speedB += error;
         analogWrite(_bPwm,speedB);
         //_errTicksA = 0;
@@ -120,7 +120,7 @@ void enc_motor::enc_fwd(double reqTurns, int speed)
 void enc_motor::enc_bak(double reqTurns, int speed)
 
 {
-    analogWrite(_bPwm, speed-10);
+    analogWrite(_bPwm, speed);
     digitalWrite(_bIn1, LOW);
     digitalWrite(_bIn2, HIGH);
     analogWrite(_aPwm, speed);
@@ -137,7 +137,7 @@ void enc_motor::enc_bak(double reqTurns, int speed)
     while (_turnsA < reqTurns && _turnsB < reqTurns) //this function is for both motors
     {
         delay(100);
-        error = (_ticksA - _ticksB) / _kp;
+        error = (_errTicksA - _errTicksB) / _kp;
         speedB += error;
         analogWrite(_bPwm,speedB);
         //_errTicksA = 0;

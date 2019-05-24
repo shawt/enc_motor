@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C86C83422298597F00F8864F /* arduino.h in Headers */ = {isa = PBXBuildFile; fileRef = C86C83412298597F00F8864F /* arduino.h */; };
 		C8E842FB228B4CFD00825D8F /* enc_motor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C8E842F9228B4CFD00825D8F /* enc_motor.cpp */; };
 		C8E842FC228B4CFD00825D8F /* enc_motor.h in Headers */ = {isa = PBXBuildFile; fileRef = C8E842FA228B4CFD00825D8F /* enc_motor.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C86C83412298597F00F8864F /* arduino.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = arduino.h; path = "../../../../Library/Mobile Documents/com~apple~CloudDocs/Documents/RELEASE_5_11_0/arduino.h"; sourceTree = "<group>"; };
 		C8E842F1228B3E1300825D8F /* libenc_motor.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libenc_motor.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8E842F9228B4CFD00825D8F /* enc_motor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = enc_motor.cpp; sourceTree = "<group>"; };
 		C8E842FA228B4CFD00825D8F /* enc_motor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = enc_motor.h; sourceTree = "<group>"; };
@@ -31,6 +33,7 @@
 		C8E842E8228B3E1300825D8F = {
 			isa = PBXGroup;
 			children = (
+				C86C83412298597F00F8864F /* arduino.h */,
 				C8E842F9228B4CFD00825D8F /* enc_motor.cpp */,
 				C8E842FA228B4CFD00825D8F /* enc_motor.h */,
 				C8E842F2228B3E1300825D8F /* Products */,
@@ -53,6 +56,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8E842FC228B4CFD00825D8F /* enc_motor.h in Headers */,
+				C86C83422298597F00F8864F /* arduino.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
