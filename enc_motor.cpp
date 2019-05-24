@@ -78,12 +78,13 @@ void enc_motor::pciSetup(byte pin)
 void enc_motor::enc_fwd(double reqTurns, int speed)
 
 {
-    analogWrite(_aPwm, speed);
-    digitalWrite(_aIn1, HIGH);
-    digitalWrite(_aIn2, LOW);
     analogWrite(_bPwm, speed);
     digitalWrite(_bIn1, HIGH);
     digitalWrite(_bIn2, LOW);
+    analogWrite(_aPwm, speed);
+    digitalWrite(_aIn1, HIGH);
+    digitalWrite(_aIn2, LOW);
+    
     int speedA = speed;
     int speedB = speed;
     int error = 0;
@@ -99,7 +100,7 @@ void enc_motor::enc_fwd(double reqTurns, int speed)
         delay(100);
         error = (_ticksA - _ticksB) / _kp;
         speedB += error;
-        analogWrite(6,speedB);
+        analogWrite(_bPwm,speedB);
         //_errTicksA = 0;
         //_errTicksB = 0;
         
@@ -119,12 +120,13 @@ void enc_motor::enc_fwd(double reqTurns, int speed)
 void enc_motor::enc_bak(double reqTurns, int speed)
 
 {
-    analogWrite(_aPwm, speed);
-    digitalWrite(_aIn1, LOW);
-    digitalWrite(_aIn2, HIGH);
     analogWrite(_bPwm, speed);
     digitalWrite(_bIn1, LOW);
     digitalWrite(_bIn2, HIGH);
+    analogWrite(_aPwm, speed);
+    digitalWrite(_aIn1, LOW);
+    digitalWrite(_aIn2, HIGH);
+
     int speedA = speed;
     int speedB = speed;
     int error = 0;
@@ -137,7 +139,7 @@ void enc_motor::enc_bak(double reqTurns, int speed)
         delay(100);
         error = (_ticksA - _ticksB) / _kp;
         speedB += error;
-        analogWrite(6,speedB);
+        analogWrite(_bPwm,speedB);
         //_errTicksA = 0;
         //_errTicksB = 0;
         
