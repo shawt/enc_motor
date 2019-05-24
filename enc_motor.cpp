@@ -97,7 +97,7 @@ void enc_motor::enc_fwd(double reqTurns, int speed)
     
     while (_turnsA < reqTurns && _turnsB < reqTurns) //this function is for both motors
     {
-        delay(100);
+        delay(80);
         error = (_errTicksA - _errTicksB) / _kp;
         speedB += error;
         analogWrite(_bPwm,speedB);
@@ -136,7 +136,7 @@ void enc_motor::enc_bak(double reqTurns, int speed)
     
     while (_turnsA < reqTurns && _turnsB < reqTurns) //this function is for both motors
     {
-        delay(100);
+        delay(80);
         error = (_errTicksA - _errTicksB) / _kp;
         speedB += error;
         analogWrite(_bPwm,speedB);
