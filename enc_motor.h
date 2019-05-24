@@ -47,7 +47,7 @@ private:
     int _bIn2;
     int _bPwm;
     int _partialTurn;
-    int _kp //constant divider for errors
+    int _kp; //constant divider for errors
     volatile long _ticksA;
     volatile float _turnsA;
     volatile long _ticksB;
