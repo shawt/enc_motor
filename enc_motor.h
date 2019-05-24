@@ -50,8 +50,10 @@ private:
     int _kp; //constant divider for errors
     volatile long _ticksA;
     volatile float _turnsA;
+    volatile long _errTicksA;
     volatile long _ticksB;
     volatile float _turnsB;
+    volatile long _errTicksB;
     
 };
 
