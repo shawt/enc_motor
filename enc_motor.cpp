@@ -19,7 +19,7 @@ enc_motor::enc_motor(int ratio, int encApin, int encBpin)
     _bPwm = 6;
     _bIn1 = 7;
     _bIn2 = 8;
-    _kp =5;
+    _kp =4;
     _partialTurn = (_ratio * 8) / 16; //8 pole magnet will generate 8 pin-change interrupt calls per encoder rotation. This means that th$
     
     pinMode (encApin, INPUT_PULLUP);
